@@ -21,6 +21,7 @@
       justify-content: center;
       align-items: center;
       color: #fff;
+      overflow: hidden;
     }
 
     .overlay {
@@ -63,6 +64,34 @@
       color: #bbbbbb;
     }
 
+    .btn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      background: #ffffff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn:hover {
+      background-color: #dddddd;
+    }
+
+    .qr-container {
+      margin-top: 20px;
+    }
+
+    .qr-container img {
+      width: 120px;
+      border-radius: 10px;
+      border: 2px solid #fff;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -80,6 +109,11 @@
   </style>
 </head>
 <body>
+  <audio autoplay loop>
+    <source src="https://www.fesliyanstudios.com/play-mp3/387" type="audio/mp3">
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+
   <div class="overlay">
     <h1>O EXTRAORDINÁRIO</h1>
     <h2>“A beleza da vida cotidiana” — Lc 17,7-10</h2>
@@ -87,18 +121,17 @@
     <p>Hoje queremos viver juntos esse momento especial de partilha, oração e reflexão sobre como até o simples pode ser sagrado.</p>
     <p class="info">🕗 Hoje (Quinta-feira) | 20h00</p>
     <p class="local">📍 Comunidade Nsa. Senhora Aparecida <br> Avenida C, 212 – Setor Água Branca</p>
-  </div>
 
-  <script>
-    // Animação extra opcional ao rolar (se quiser expandir o site futuramente)
-    window.addEventListener('scroll', () => {
-      document.querySelectorAll('.overlay').forEach(el => {
-        const pos = el.getBoundingClientRect().top;
-        if (pos < window.innerHeight - 100) {
-          el.style.animation = 'fadeIn 1.5s ease forwards';
-        }
-      });
-    });
-  </script>
+    <!-- Botão WhatsApp -->
+    <a class="btn" href="https://wa.me/?text=Hoje%20%C3%A9%20dia%20de%20viver%20o%20extraordin%C3%A1rio!%20Participe%20comigo%20deste%20momento%20especial%20na%20Comunidade%20Nsa.%20Sra.%20Aparecida%20às%2020h.%20Mais%20detalhes%20em%3A%20https%3A%2F%2Fseusite.com%2Fconvite" target="_blank">
+      📲 Abrir Convite no WhatsApp
+    </a>
+
+    <!-- QR Code -->
+    <div class="qr-container">
+      <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">Escaneie para abrir o convite</p>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://seusite.com/convite" alt="QR Code do Convite">
+    </div>
+  </div>
 </body>
 </html>
